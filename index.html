@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitcons Favoritas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="container-cabecalho">
+            <div class="logo-area">
+                <h1 class="nome-projeto">🎭 Séries de Comédia</h1>
+            </div>
+            <nav class="menu-navegacao">
+                <ul class="lista-menu">
+                    <li><a href="index.html" class="link-menu">Início</a></li>
+                    <li><a href="#" class="link-menu" onclick="irParaSeries()">Conheça as Séries</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="banner" id="inicio">
+        <div class="camada-escura"></div>
+        <div class="conteudo-banner">
+            <h2 class="slogan">"Um site dedicado a algumas das séries de comédia mais populares da televisão."</h2>
+        </div>
+    </section>
+
+    <section class="sobre-nos">
+        <div class="container">
+            <h2 class="titulo-secao">Sobre o Site</h2>
+            <div class="conteudo-sobre">
+                <p>Este projeto foi desenvolvido para apresentar algumas das séries de comédia mais populares da
+                    televisão.</p>
+                <p>Cada página aborda uma série diferente, trazendo informações sobre a história, personagens e
+                    curiosidades.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao-rosa">
+        <div class="container">
+            <h2 class="titulo-secao">Meu rank das Séries</h2>
+            <div class="tabela-comparativa-wrapper">
+                <table class="tabela-comparativa">
+                    <thead>
+                        <tr>
+                            <th class="coluna-recurso">Série</th>
+                            <th class="coluna-versao">Ano</th>
+                            <th class="coluna-versao">Temporadas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="recurso-nome">Friends</td>
+                            <td class="recurso">1994</td>
+                            <td class="recurso">10</td>
+                        </tr>
+                        <tr>
+                            <td class="recurso-nome">Brooklyn 99</td>
+                            <td class="recurso">2013</td>
+                            <td class="recurso">8</td>
+                        </tr>
+                        <tr>
+                            <td class="recurso-nome">How I Met Your Mother</td>
+                            <td class="recurso">2005</td>
+                            <td class="recurso">9</td>
+                        </tr>
+                        <tr>
+                            <td class="recurso-nome">The Office</td>
+                            <td class="recurso">2005</td>
+                            <td class="recurso">9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre-nos">
+        <div class="container">
+            <h2 class="titulo-secao">Onde assistir</h2>
+            <div class="botoes-download">
+                <a href="https://www.netflix.com" target="_blank">
+                    <button class="botao-download">
+                        <img class="icone-app" src="img/netflix.jpg">
+                    </button>
+                </a>
+                <a href="https://www.primevideo.com" target="_blank">
+                    <button class="botao-download">
+                        <img class="icone-app" src="img/prime.jpg">
+                    </button>
+                </a>
+                <a href="https://www.rottentomatoes.com" target="_blank">
+                    <button class="botao-download">
+                        <img class="icone-app" src="img/rotten.jpg">
+                    </button>
+                </a>
+                <a href="https://www.imdb.com" target="_blank">
+                    <button class="botao-download">
+                        <img class="icone-app" src="img/imdb.jpg">
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao-rosa" id="series">
+        <div class="container">
+            <h2 class="titulo-secao">Conheça as Séries</h2>
+            <div class="grid-cards">
+                <a href="friends.html" class="link-card">
+                    <div class="card">
+                        <div class="card-imagem-container">
+                            <img src="img/friends.jpg" alt="Friends" class="card-imagem">
+                        </div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Friends</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="brooklyn99.html" class="link-card">
+                    <div class="card">
+                        <div class="card-imagem-container">
+                            <img src="img/b99.jpg" alt="Brooklyn 99" class="card-imagem">
+                        </div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">Brooklyn 99</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="himym.html" class="link-card">
+                    <div class="card">
+                        <div class="card-imagem-container">
+                            <img src="img/HIMYM.jpg" alt="HIMYM" class="card-imagem">
+                        </div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">HIMYM</h3>
+                        </div>
+                    </div>
+                </a>
+                <a href="theoffice.html" class="link-card">
+                    <div class="card">
+                        <div class="card-imagem-container">
+                            <img src="img/theoffice.jpg" alt="The Office" class="card-imagem">
+                        </div>
+                        <div class="card-conteudo">
+                            <h3 class="card-titulo">The Office</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="secao-contato">
+        <div class="container">
+            <h2 class="titulo-secao">Entre em Contato</h2>
+            <p class="texto-contato">
+                Gostou das séries apresentadas? Tem alguma sitcom favorita que não apareceu por aqui?
+                Entre em contato para trocar recomendações, curiosidades e opiniões sobre séries de comédia.
+                Afinal, sempre existe uma nova série divertida para descobrir!
+            </p>
+            <form class="formulario-contato" onsubmit="enviarWhatsApp(event)">
+                <input type="text" id="nome" placeholder="Seu nome" required>
+                <textarea id="mensagem" placeholder="Qual série você indicaria?" rows="5" required></textarea>
+                <button type="submit" class="botao-enviar">
+                    Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="rodape">
+        <div class="info-copyright">
+            <p>&copy; 2026 Séries Favoritas. Todos os direitos reservados. Tatiana Maria</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
