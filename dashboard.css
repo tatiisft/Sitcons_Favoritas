@@ -49,7 +49,7 @@
 }
 
 @media (max-width: 760px) {
-    .pagina-dashboard { padding-top: 185px; }
+    .pagina-dashboard { padding-top: 100px; }
     .resumo-dashboard, .graficos-dashboard { grid-template-columns: 1fr; }
 }
 
