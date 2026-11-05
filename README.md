@@ -6,7 +6,8 @@ Site desenvolvido para apresentar algumas das minhas sitcoms favoritas, exploran
 
 **Site publicado:**  
 https://tatiisft.github.io/Sitcons_Favoritas/
-https://sitconsfavoritas.vercel.app/
+
+https://sitconstrabalhoweb.vercel.app/
 
 ## 📺 Séries Apresentadas
 
