@@ -1,12 +1,10 @@
 :root {
-    /* Paleta de cores simplificada */
     --cor-escura: #2D3142;
     --cor-rosa:  #EF8354;
     --cor-rosa-clara: #F6BD60;
     --cor-fundo-claro:  #f6bd609f;
     --cor-roxa: #4F5D75;
     
-    /* Fontes */
     --fonte-titulo: 'Nova Mono', monospace;
     --fonte-texto: 'Nunito', sans-serif;
 }
@@ -454,4 +452,190 @@ body {
 .info-copyright {
     flex: 1;
     min-width: 200px;
+}
+
+img { max-width: 100%; }
+
+[id] { scroll-margin-top: 70px; }
+
+.area-video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.botao-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.botao-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.botao-menu[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.botao-menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.botao-menu[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+.botao-menu:focus-visible,
+.link-menu:focus-visible {
+    outline: 3px solid var(--cor-rosa-clara);
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+
+    .cabecalho { padding: 10px 0; }
+
+    .container-cabecalho {
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 0 16px;
+    }
+
+    .nome-projeto {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .botao-menu { display: flex; flex-shrink: 0; }
+
+    .menu-navegacao {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        min-width: 0;
+        flex: none;
+        background-color: var(--cor-escura);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: max-height 0.35s ease, visibility 0.35s;
+    }
+
+    .menu-navegacao.aberto {
+        max-height: 400px;
+        visibility: visible;
+    }
+
+    .lista-menu {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0;
+        justify-content: flex-start;
+        padding: 6px 0 12px;
+    }
+
+    .link-menu {
+        display: block;
+        padding: 14px 20px;
+        font-size: 17px;
+        border-bottom: none;
+    }
+
+    .link-menu:hover {
+        border-bottom: none;
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .banner,
+    .banner-friends,
+    .banner-bk99,
+    .banner-theoffice,
+    .banner-himym {
+        margin-top: 64px;
+        height: 220px;
+    }
+
+    .conteudo-banner { padding: 0 20px; }
+    .slogan { font-size: 20px; }
+    .conteudo-banner .nome-projeto { font-size: 24px; }
+
+    .sobre-nos,
+    .secao-rosa,
+    .secao-contato { padding: 40px 16px; }
+
+    .container { padding: 0; }
+
+    .titulo-secao,
+    .titulo-secao-personagens {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .botoes-download {
+        gap: 14px;
+        margin-top: 24px;
+    }
+
+    .botoes-download a { display: block; }
+
+    .botao-download {
+        width: 100%;
+        padding: 14px 10px;
+    }
+
+    .icone-app {
+        width: 100%;
+        max-width: 120px;
+    }
+
+    .tabela-comparativa-wrapper { margin-top: 24px; }
+
+    .tabela-comparativa th,
+    .tabela-comparativa td {
+        padding: 10px 8px;
+        font-size: 15px;
+    }
+
+    .recurso { font-size: 16px; }
+
+    .grid-cards { gap: 20px; margin-top: 24px; }
+    .card-imagem-container { height: 180px; }
+
+    .area-botoes {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .botao-trailer {
+        display: block;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    .botao-trailer1 {
+        max-width: 100%;
+        text-align: center;
+        margin: 24px auto;
+    }
+
+    .card:hover .card-imagem { filter: none; }
+}
+
+@media (max-width: 600px) {
+    .grid-cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 380px) {
+    .nome-projeto { font-size: 15px; letter-spacing: 0; }
+    .botoes-download { gap: 10px; }
+    .botao-download { padding: 10px 6px; }
 }
