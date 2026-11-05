@@ -14,6 +14,22 @@ function irParaSeries() {
     }
 }
 
+
+function irParaContato() {
+    if (document.getElementById("contato")) {
+        const secao = document.getElementById("contato");
+
+        window.scrollTo({
+            top: secao.offsetTop - 50,
+            behavior: "smooth"
+        });
+
+    } else {
+        window.location.href = "index.html#contato";
+    }
+}
+
+
 function enviarWhatsApp(event) {
     event.preventDefault();
 

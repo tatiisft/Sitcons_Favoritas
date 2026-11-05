@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Séries de Comédia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="container-cabecalho">
+            <div class="logo-area">
+                <h1 class="nome-projeto">🎭 Séries de Comédia</h1>
+            </div>
+            <nav class="menu-navegacao" aria-label="Menu principal">
+                <ul class="lista-menu">
+                    <li><a href="index.html" class="link-menu">Início</a></li>
+                    <li><a href="#" class="link-menu" onclick="irParaSeries()">Conheça as Séries</a></li>
+                    <li><a href="dashboard.html" class="link-menu">Dashboard</a></li>
+                    <li><a href="#" class="link-menu" onclick="irParaContato()">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina-dashboard container">
+        <h2 class="titulo-secao">Dashboard de Sitcoms</h2>
+        <p class="dashboard-introducao">Aqui você pode explorar dados de sitcoms, comparar avaliações e descobrir
+            curiosidades.</p>
+
+        <section class="filtros-dashboard">
+            <h2>Explore as Sitcoms</h2>
+            <p>Pesquise e filtre as séries para comparar os dados nos gráficos.</p>
+
+            <div class="campos-filtros">
+                <div class="campo-filtro">
+                    <label for="busca-serie">Buscar série</label>
+                    <input type="text" id="busca-serie" placeholder="Digite o nome da série...">
+                </div>
+
+                <div class="campo-filtro">
+                    <label for="filtro-decada">Década de estreia</label>
+                    <select id="filtro-decada">
+                        <option value="todas">Todas as décadas</option>
+                    </select>
+                </div>
+
+                <div class="campo-filtro">
+                    <label for="filtro-genero">Gênero</label>
+                    <select id="filtro-genero">
+                        <option value="todos">Todos os gêneros</option>
+                    </select>
+                </div>
+                <button type="button" id="limpar-filtros">Limpar filtros</button>
+            </div>
+
+            <p id="resultado-filtros" role="status"></p>
+        </section>
+
+        <section class="resumo-dashboard">
+            <article class="card-dashboard">
+                <h3>Séries analisadas</h3>
+                <p id="total-series">--</p>
+            </article>
+
+            <article class="card-dashboard">
+                <h3>Nota média</h3>
+                <p id="nota-media">--</p>
+            </article>
+
+            <article class="card-dashboard">
+                <h3>Gêneros diferentes</h3>
+                <p id="total-generos">--</p>
+            </article>
+        </section>
+
+        <section class="graficos-dashboard">
+            <article class="painel-grafico">
+                <h3>Séries por década</h3>
+                <div class="area-grafico">
+                    <canvas id="grafico-decadas"></canvas>
+                </div>
+            </article>
+
+            <article class="painel-grafico">
+                <h3>Top 10 mais avaliadas</h3>
+                <div class="area-grafico">
+                    <canvas id="grafico-top10"></canvas>
+                </div>
+            </article>
+
+            <article class="painel-grafico">
+                <h3>Nota média por década</h3>
+                <div class="area-grafico">
+                    <canvas id="grafico-medias"></canvas>
+                </div>
+            </article>
+
+            <article class="painel-grafico">
+                <h3>Gênero principal das séries</h3>
+                <p>Considera apenas o primeiro gênero de cada série.</p>
+                <div class="area-grafico">
+                    <canvas id="grafico-principal"></canvas>
+                </div>
+            </article>
+
+            <article class="painel-grafico">
+                <h3>Gêneros mais frequentes</h3>
+                <p>Uma série pode pertencer a vários gêneros.</p>
+                <div class="area-grafico">
+                    <canvas id="grafico-generos"></canvas>
+                </div>
+            </article>
+        </section>
+
+        <p id="mensagem-erro" role="alert"></p>
+
+
+
+        <section class="secao-crud" id="minha-lista">
+            <div class="crud-dashboard">
+
+                <h2>🍿 Sua Lista de Sitcoms</h2>
+                <p>Cadastre séries, registre suas avaliações e compartilhe recomendações.</p>
+
+                <form id="form-recomendacao">
+                    <input type="hidden" id="recomendacao-id">
+                    <div class="campos-crud">
+                        <div>
+                            <label for="nome-recomendacao">Nome da sitcom</label>
+                            <input type="text" id="nome-recomendacao" placeholder="Ex.: Friends" maxlength="100"
+                                required>
+                        </div>
+
+                        <div>
+                            <label for="nota-recomendacao">Sua nota (0 a 10)</label>
+                            <input type="number" id="nota-recomendacao" min="0" max="10" step="0.1" required>
+                        </div>
+
+                        <div>
+                            <label for="status-recomendacao">Status</label>
+                            <select id="status-recomendacao" required>
+                                <option value="Quero assistir">Quero assistir</option>
+                                <option value="Assistindo">Assistindo</option>
+                                <option value="Assistida">Assistida</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-comentario">
+                            <label for="comentario-recomendacao">Comentário</label>
+                            <textarea id="comentario-recomendacao" maxlength="300"
+                                placeholder="O que você achou da série?"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="botoes-crud">
+                        <button type="submit" id="salvar-recomendacao">Salvar recomendação</button>
+                        <button type="button" id="cancelar-edicao" hidden>Cancelar edição</button>
+                    </div>
+                </form>
+
+                <p id="mensagem-crud" role="status"></p>
+
+                <h3>Recomendações cadastradas</h3>
+                <div id="lista-recomendacoes"></div>
+            </div>
+        </section>
+
+
+        <section class="api-dashboard" id="descobrir-series">
+
+            <div class="container">
+                <h2>🔎 Descubra Mais Séries</h2>
+                <p>Pesquise séries e descubra novas opções para assistir, com dados da TVmaze.</p>
+
+                <form id="form-busca-api">
+                    <label for="busca-api">Nome da série</label>
+                    <div class="campo-busca-api">
+                        <input type="search" id="busca-api" placeholder="Ex.: Friends" maxlength="100" required>
+                        <button type="submit">Pesquisar</button>
+                    </div>
+                </form>
+
+                <p id="mensagem-api" role="status"></p>
+
+                <div id="resultados-api"></div>
+                <p class="credito-api">
+                    Informações fornecidas pela
+                    <a href="https://www.tvmaze.com/" target="_blank" rel="noopener noreferrer">TVmaze</a>.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="info-copyright">
+            <p>&copy; 2026 Séries de Comédia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- Gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Back4App -->
+    <script src="https://unpkg.com/parse@6.1.1/dist/parse.min.js"></script>
+
+    <!-- JavaScript do projeto -->
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="crud.js"></script>
+    <script src="api.js"></script>
+
+</body>
+
+</html>
